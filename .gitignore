@@ -1,0 +1,6 @@
+__pycache__/
+venv/
+generated_results/
+.ipynb_checkpoints/
+testing_files_(ixf)/
+.idea/

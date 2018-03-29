@@ -1,0 +1,42 @@
+tribo.ls()
+
+{u'methods': [u'docs',
+              u'curves.getdata',
+              u'ls',
+              u'curves',
+              u'docs.open',
+              u'parameters',
+              u'groups',
+              u'curves.breakpoints',
+              u'images',
+              u'parameters.getvalue',
+              u'parameters.getvalues',
+              u'images.export'],
+ u'server_name': u'InstrumX',
+ u'server_version': u'8.0.13'}
+
+
+
+??? sometimes there is error for connection (e.g tribo.groups()), but repeating the same commande will get passed through" ???
+
+
+??? groups['current'] == '-1' ???
+pp(groups)
+{u'current': u'-1',
+ u'groups': {u'1': {u'data': {u'2': {u'name': u'Test_1',
+                                     u'relevant': False}},
+                    u'indexes': [u'2'],
+                    u'name': u'Group_1',
+                    u'relevant': False}},
+ u'indexes': [u'1']}
+
+
+??? parameters of linear gives NaN values ???
+
+Group:  Linear
+***
+Tribo measurement2 : Min µ = nan
+Tribo measurement2 : Max µ = nan
+Tribo measurement2 : Mean µ = nan
+Tribo measurement2 : StdDev µ = nan
+---------------------------------------
