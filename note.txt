@@ -1,4 +1,32 @@
-tribo.ls()
+﻿Jsonrpctcp:
+ - connect('127.0.0.1', tribo_port) => tribo client
+
+Meta:
+ - tribo.ls() => {dict}
+
+
+File Structure:
+ - tribo.docs.open(path) => {dict}
+ - tribo.docs() => {dict}
+ - tribo.groups(doc_id) => {dict}
+
+
+Data Info:
+ - tribo.parameters(doc_id) => {dict}
+ - tribo.curves(doc_id) => {dict}
+ ?? tribo.images()
+
+
+Get Values:
+ - tribo.parameters.getvalue(doc_id, data_id, param_id) => {dict}
+ - tribo.curves.getdata(doc_id, data_id, page_index, page_size, curve_type) => {dict}
+
+ ?? tribo.parameters.getvalues()
+ ?? tribo.images.export()
+ ?? tribo.curves.breakpoints()
+
+
+tribo.ls():
 
 {u'methods': [u'docs',
               u'curves.getdata',
@@ -16,6 +44,30 @@ tribo.ls()
  u'server_version': u'8.0.13'}
 
 
+My summary of all data headers (in total 20):
+
+0   Time [s]
+1   Sliding Time [s]
+2   Cycles Reset
+3   Cycles Recompute
+4   Distance [m]
+5   Linear Position [m]
+6   Angular Position [rad]
+7   Speed [m/s]
+8   Normal Force [N]
+9   Friction Force [N]
+10  Penetration Depth [m]
+11  Oven Temperature [°C]
+12  Sample Temperature [°C]
+13  User Channel 1
+14  User Channel 2
+15  User Channel 3
+16  Coefficient of Friction
+17  Max Linear Speed [m/s]
+18  Norminal Normal Force [N]
+19  Sequence Count
+
+---------------------------
 
 ??? sometimes there is error for connection (e.g tribo.groups()), but repeating the same commande will get passed through" ???
 
@@ -40,3 +92,7 @@ Tribo measurement2 : Max µ = nan
 Tribo measurement2 : Mean µ = nan
 Tribo measurement2 : StdDev µ = nan
 ---------------------------------------
+
+2018-03-29
+Used python 2.7.13 in Anton Paar folder as interpreter and inherit global packages
+Installed jupyter package, needed to update jupyter core in terminal in order to make it work
