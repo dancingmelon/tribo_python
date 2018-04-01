@@ -86,6 +86,10 @@ def print_group_parameters(groups):
             print "---------------------------------------"
         print "======================================="
 
+# get all values of a certain parameter within one group
+parameters_list = tribo.parameters.getvalues(doc_id=doc_id,
+                                             group_id='1',
+                                             param_id='2000')
 
 curves_info = tribo.curves(doc_id=doc_id)
 

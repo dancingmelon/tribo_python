@@ -18,10 +18,10 @@ Data Info:
 
 
 Get Values:
- - tribo.parameters.getvalue(doc_id, data_id, param_id) => {dict}
+ - tribo.parameters.getvalue(doc_id, data_id, param_id) => {dict} to get the parameter value in one measurement
+ - tribo.parameters.getvalues(doc_id, group_id, param_id) => {dict} to get all parameter values in one group
  - tribo.curves.getdata(doc_id, data_id, page_index, page_size, curve_type) => {dict}
 
- ?? tribo.parameters.getvalues()
  ?? tribo.images.export()
  ?? tribo.curves.breakpoints()
 
