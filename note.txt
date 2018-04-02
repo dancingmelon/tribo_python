@@ -95,4 +95,4 @@ Tribo measurement2 : StdDev µ = nan
 
 2018-03-29
 Used python 2.7.13 in Anton Paar folder as interpreter and inherit global packages
-Installed jupyter package, needed to update jupyter core in terminal in order to make it work
+Installed jupyter package, needed to update jupyter core in terminal in order to make it work (pip install jupyter-core --upgrade)

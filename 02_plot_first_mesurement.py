@@ -116,7 +116,8 @@ if __name__ == '__main__':
     ], style={'width': 1500, 'margin': '30px auto'})
 
     info('Dash created')
-    webbrowser.open_new('http://127.0.0.1:8050/')
 
-    app.run_server(debug=False, processes=0)
+    # add webbrowser.open_new('http://127.0.0.1:8050/') or :5000 for flask app in production code
+    # change this to server.run(debug=False, processes=0) in production code
+    app.run_server(debug=True)
     info('Dash ok')
