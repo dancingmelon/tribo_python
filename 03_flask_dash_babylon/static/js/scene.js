@@ -13,13 +13,18 @@ window.addEventListener('DOMContentLoaded', function() {
 
         BABYLON.SceneLoader.ImportMesh("", "/static/assets/vacuum_chamber/", "vacuum_chamber.gltf", scene, function(newmeshes) {
             scene.createDefaultCameraOrLight(true, true, true);
-            scene.activeCamera.alpha += Math.PI;
+            scene.activeCamera.alpha = Math.PI*2/3;
+            scene.activeCamera.beta = Math.PI/3;
+            scene.activeCamera.wheelPrecision = 20;
+            scene.activeCamera.upperBetaLimit = Math.PI/2;
+            scene.activeCamera.upperRadiusLimit = 50;
+            scene.activeCamera.lowerRadiusLimit = 5;
 
             var helper = scene.createDefaultEnvironment({
               createSkybox: false,
               enableGroundMirror: true,
               environmentTexture: '/static/assets/environment.dds',
-              cameraExposure: 1.5
+              cameraExposure: 2.0
             });
             helper.setMainColor(BABYLON.Color3.White());
             
