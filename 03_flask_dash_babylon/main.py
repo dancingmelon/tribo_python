@@ -42,25 +42,42 @@ if __name__ == '__main__':
 
     # app.css.append_css({'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'})
     app.layout = html.Div([
+
         html.Link(
             rel='stylesheet',
             href='/static/css/dash_official_stylesheet.css'
         ),
 
-        html.H1("This is a iframe of babylon.js asset!!!"),
+        # dcc.Location(id='url', refresh=False),
+
+        html.Div(html.H2("3D Visualisation of Tribometer"),
+                 style={'textAlign': 'center'}),
+
+        # html.Br(),
 
         html.Iframe(
             src='/babylon',
             style={
                 'display': 'inline-block',
-                'width': '1200px',
+                'width': '1100px',
                 'height': '600px'
             }
         ),
 
-        html.H1(children='''
-            Dash: A web application framework for Python.
-        '''),
+        html.Div(html.A('Click for full screen',
+                        href="http://127.0.0.1:5000/babylon",
+                        className='button button-primary'),
+                 className='row',
+                 style={'textAlign': 'center'}),
+
+        # dcc.Link('Click for full screen', href='http://127.0.0.1:5000/babylon'),
+
+        html.Hr(),
+
+        html.H2("Dash: A web application framework for Python",
+                style={
+                    'textAlign': 'center'
+                }),
 
         dcc.Graph(
             id='example-graph',
@@ -70,11 +87,13 @@ if __name__ == '__main__':
                     {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': 'Montreal'},
                 ],
                 'layout': {
-                    'title': 'Dash Data Visualization'
+                    'title': 'Dash Data Visualization',
+                    'width': 1100,
+                    'height': 600
                 }
             }
         )
-    ], style={'width': 1500, 'margin': '30px auto'})
+    ], className="container")
 
 
     @server.route('/babylon')

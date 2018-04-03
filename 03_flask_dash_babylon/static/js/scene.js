@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         var door, sample;
 
-        BABYLON.SceneLoader.ImportMesh("", "/static/assets/robot/", "robot.gltf", scene, function(newmeshes) {
+        BABYLON.SceneLoader.ImportMesh("", "/static/assets/vacuum_chamber/", "vacuum_chamber.gltf", scene, function(newmeshes) {
             scene.createDefaultCameraOrLight(true, true, true);
             scene.activeCamera.alpha += Math.PI;
 
