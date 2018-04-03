@@ -5,3 +5,4 @@ generated_results/
 *.ipynb
 testing_files_(ixf)/
 .idea/
+03_flask_dash_babylon/static/assets/

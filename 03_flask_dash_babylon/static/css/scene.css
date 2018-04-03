@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Quantico';
+  src: url('../img/Quantico-Bold.ttf');
+
+}
+
+html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+			background-color:#FAFAFA;
+        }
+
+
+#renderCanvas {
+    position:absolute;
+	width: 100%;
+	height: 100%;
+    top: 0;
+	touch-action: none;
+}
+

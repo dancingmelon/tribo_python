@@ -14,7 +14,7 @@ pp = pprint.PrettyPrinter(indent=4)  # use pp.pprint(stuff) for pretty printing 
 
 import webbrowser
 
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import dash
 from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
@@ -40,7 +40,12 @@ if __name__ == '__main__':
     app.css.config.serve_locally = True
     app.scripts.config.serve_locally = True
 
+    # app.css.append_css({'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'})
     app.layout = html.Div([
+        html.Link(
+            rel='stylesheet',
+            href='/static/css/dash_official_stylesheet.css'
+        ),
 
         html.H1("This is a iframe of babylon.js asset!!!"),
 
@@ -48,8 +53,8 @@ if __name__ == '__main__':
             src='/babylon',
             style={
                 'display': 'inline-block',
-                'width': '800px',
-                'height': '400px'
+                'width': '1200px',
+                'height': '600px'
             }
         ),
 
@@ -69,13 +74,17 @@ if __name__ == '__main__':
                 }
             }
         )
-    ])
+    ], style={'width': 1500, 'margin': '30px auto'})
 
 
     @server.route('/babylon')
     def babylon():
         return render_template('index.html')
 
+    @server.route('/static/<path:path>')
+    def static_file(path):
+        static_folder = os.path.join(os.getcwd(), 'static')
+        return send_from_directory(static_folder, path)
 
     # add webbrowser.open_new('http://127.0.0.1:5000/') in production code
     # change this to server.run(debug=False, processes=0) in production code
