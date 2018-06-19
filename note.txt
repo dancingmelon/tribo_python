@@ -1,7 +1,9 @@
-﻿Jsonrpctcp:
+﻿Jsonrpctcp: 
+# to get the tribo client object
  - connect('127.0.0.1', tribo_port) => tribo client
 
 Meta:
+# to show all the available methods
  - tribo.ls() => {dict}
 
 
