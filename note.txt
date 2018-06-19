@@ -8,13 +8,21 @@ Meta:
 
 
 File Structure:
+# to open a tribometer testing file at specific path
  - tribo.docs.open(path) => {dict}
+
+# to list structure in document level
  - tribo.docs() => {dict}
+
+# to list structure in group level with one provided document ID
  - tribo.groups(doc_id) => {dict}
 
 
 Data Info:
+# to show parameters structure (min cof, max cof, wear rate, etc)
  - tribo.parameters(doc_id) => {dict}
+
+# to show curves data structure (Time, Pd, CoF, etc.)
  - tribo.curves(doc_id) => {dict}
  ?? tribo.images()
 
